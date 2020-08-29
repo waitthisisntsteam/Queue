@@ -8,20 +8,36 @@ namespace Queue
         {
             var values = new Queue<int>();
             string answer = "";
-            int inpit = 0;
+            int input = 0;
+            var queue = new Queue<int>();
 
-
-            //values.Enqueue(1);
-            //values.Enqueue(2);
-            //values.Enqueue(3);
-
-            //values.Peek();
-
-            //values.Dequeue();
-
-            //values.Peek();
-
-            //values.Enqueue(3);
+            while (true)
+            {
+                Console.WriteLine("Would you like to enqueue, dequeue, peek, or exit?");
+                answer = Console.ReadLine().ToLower();
+                if (answer == "enqueue")
+                {
+                    Console.WriteLine("What would you like to enqueue?");
+                    input = int.Parse(Console.ReadLine());
+                    queue.Enqueue(input);
+                }
+                else if (answer == "dequeue")
+                {
+                    queue.Dequeue();
+                }
+                else if (answer == "peek")
+                {
+                    queue.Peek();
+                }
+                else if (answer == "exit")
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Check your spelling.");
+                }
+            }
         }
     }
 }
